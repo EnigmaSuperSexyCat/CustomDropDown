@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Kevin Hirsch. All rights reserved.
 //
 
-#if os(iOS)
-
 import UIKit
 
 public typealias Index = Int
@@ -333,6 +331,10 @@ public final class DropDown: UIView {
 	@objc public dynamic var textColor = DPDConstant.UI.TextColor {
 		didSet { reloadAllComponents() }
 	}
+    
+    @objc public dynamic var TextAlign = DPDConstant.UI.TextAlign {
+        didSet { reloadAllComponents() }
+    }
 
     /**
      The color of the text for selected cells of the drop down.
@@ -357,22 +359,13 @@ public final class DropDown: UIView {
      
      Changing the cell nib automatically reloads the drop down.
      */
-	public var cellNib = UINib(nibName: "DropDownCell", bundle: bundle) {
+	public var cellNib = UINib(nibName: "DropDownCell", bundle: Bundle(for: DropDownCell.self)) {
 		didSet {
 			tableView.register(cellNib, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
 			templateCell = nil
 			reloadAllComponents()
 		}
 	}
-
-  /// Correctly specify Bundle for Swift Packages
-  fileprivate static var bundle: Bundle {
-    #if SWIFT_PACKAGE
-    return Bundle.module
-    #else
-    return Bundle(for: DropDownCell.self)
-    #endif
-  }
 	
 	//MARK: Content
 
@@ -524,6 +517,8 @@ private extension DropDown {
 		}
 
 		tableView.rowHeight = cellHeight
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
 		setHiddentState()
 		isHidden = true
 
@@ -580,8 +575,8 @@ extension DropDown {
 		widthConstraint.constant = layout.width
 		heightConstraint.constant = layout.visibleHeight
 
-		tableView.isScrollEnabled = layout.offscreenHeight > 0
-
+//		tableView.isScrollEnabled = layout.offscreenHeight > 0
+        tableView.isScrollEnabled = true
 		DispatchQueue.main.async { [weak self] in
 			self?.tableView.flashScrollIndicators()
 		}
@@ -1030,7 +1025,11 @@ extension DropDown {
 
 	/// Returns the height needed to display all cells.
 	fileprivate var tableHeight: CGFloat {
-		return tableView.rowHeight * CGFloat(dataSource.count)
+        if tableView.numberOfRows(inSection: 0) < 10 {
+            return tableView.rowHeight * CGFloat(dataSource.count)
+        } else {
+            return 240
+        }
 	}
 
     //MARK: Objective-C methods for converting the Swift type Index
@@ -1075,6 +1074,7 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 		
 		cell.optionLabel.textColor = textColor
 		cell.optionLabel.font = textFont
+        cell.optionLabel.textAlignment = TextAlign
 		cell.selectedBackgroundColor = selectionBackgroundColor
         cell.highlightTextColor = selectedTextColor
         cell.normalTextColor = textColor
@@ -1205,5 +1205,3 @@ private extension DispatchQueue {
 		}
 	}
 }
-
-#endif
