@@ -17,10 +17,7 @@ let package = Package(
             name: "DropDown",
             dependencies: [],
             path: "DropDown",
-            exclude: ["Info.plist", "DropDown.h"],
-            resources: [
-              .process("DropDown/resources")
-            ]
+            exclude: ["Info.plist", "DropDown.h"]
         )
     ],
     swiftLanguageVersions: [.v5]
