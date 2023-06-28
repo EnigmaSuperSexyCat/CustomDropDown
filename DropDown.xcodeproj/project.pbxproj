@@ -13,7 +13,6 @@
 		0AB5D8881D0EEEFF002D3A17 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5D87E1D0EEEFF002D3A17 /* DPDConstants.swift */; };
 		0AB5D8891D0EEEFF002D3A17 /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5D87F1D0EEEFF002D3A17 /* DPDKeyboardListener.swift */; };
 		0AB5D88A1D0EEEFF002D3A17 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5D8801D0EEEFF002D3A17 /* DPDUIView+Extension.swift */; };
-		0AB5D88B1D0EEEFF002D3A17 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5D8821D0EEEFF002D3A17 /* DropDownCell.xib */; };
 		0AB5D88C1D0EEEFF002D3A17 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5D8841D0EEEFF002D3A17 /* DropDown+Appearance.swift */; };
 		0AB5D88D1D0EEEFF002D3A17 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5D8851D0EEEFF002D3A17 /* DropDown.swift */; };
 		0AB5D88E1D0EEEFF002D3A17 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5D8861D0EEEFF002D3A17 /* DropDownCell.swift */; };
@@ -71,7 +70,6 @@
 		0AB5D87E1D0EEEFF002D3A17 /* DPDConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDConstants.swift; sourceTree = "<group>"; };
 		0AB5D87F1D0EEEFF002D3A17 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDKeyboardListener.swift; sourceTree = "<group>"; };
 		0AB5D8801D0EEEFF002D3A17 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPDUIView+Extension.swift"; sourceTree = "<group>"; };
-		0AB5D8821D0EEEFF002D3A17 /* DropDownCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
 		0AB5D8841D0EEEFF002D3A17 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DropDown+Appearance.swift"; sourceTree = "<group>"; };
 		0AB5D8851D0EEEFF002D3A17 /* DropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
 		0AB5D8861D0EEEFF002D3A17 /* DropDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				0AB5D8871D0EEEFF002D3A17 /* DropDown.h */,
 				0AB5D8751D0EEECD002D3A17 /* Info.plist */,
 				0AB5D87D1D0EEEFF002D3A17 /* helpers */,
-				0AB5D8811D0EEEFF002D3A17 /* resources */,
 				0AB5D8831D0EEEFF002D3A17 /* src */,
 			);
 			path = DropDown;
@@ -189,14 +186,6 @@
 				0AB5D8801D0EEEFF002D3A17 /* DPDUIView+Extension.swift */,
 			);
 			path = helpers;
-			sourceTree = "<group>";
-		};
-		0AB5D8811D0EEEFF002D3A17 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				0AB5D8821D0EEEFF002D3A17 /* DropDownCell.xib */,
-			);
-			path = resources;
 			sourceTree = "<group>";
 		};
 		0AB5D8831D0EEEFF002D3A17 /* src */ = {
@@ -345,7 +334,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AB5D88B1D0EEEFF002D3A17 /* DropDownCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +512,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.assistoLab.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,6 +530,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.assistoLab.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -593,7 +583,7 @@
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = DropDown/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.assistoLab.DropDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -617,7 +607,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DropDown/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.assistoLab.DropDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";

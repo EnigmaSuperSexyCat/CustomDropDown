@@ -18,7 +18,7 @@ private typealias ComputeLayoutTuple = (x: CGFloat, y: CGFloat, width: CGFloat, 
 
 /// Can be `UIView` or `UIBarButtonItem`.
 @objc
-public protocol AnchorView: class {
+public protocol AnchorView: AnyObject {
 
 	var plainView: UIView { get }
 
@@ -82,7 +82,7 @@ public final class DropDown: UIView {
 	fileprivate let dismissableView = UIView()
 	fileprivate let tableViewContainer = UIView()
 	fileprivate let tableView = UITableView()
-	fileprivate var templateCell: DropDownCell!
+	fileprivate var templateCell = DropDownCell()
     fileprivate lazy var arrowIndication: UIImageView = {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 20, height: 10), false, 0)
         let path = UIBezierPath()
@@ -358,15 +358,15 @@ public final class DropDown: UIView {
      The NIB to use for DropDownCells
      
      Changing the cell nib automatically reloads the drop down.
-     */
-	public var cellNib = UINib(nibName: "DropDownCell", bundle: Bundle(for: DropDownCell.self)) {
-		didSet {
-			tableView.register(cellNib, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
-			templateCell = nil
-			reloadAllComponents()
-		}
-	}
-	
+//     */
+//	public var cellNib = UINib(nibName: "DropDownCell", bundle: Bundle(for: DropDownCell.self)) {
+//		didSet {
+//			tableView.register(cellNib, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
+//			templateCell = nil
+//			reloadAllComponents()
+//		}
+//	}
+//
 	//MARK: Content
 
 	/**
@@ -508,7 +508,7 @@ public final class DropDown: UIView {
 private extension DropDown {
 
 	func setup() {
-		tableView.register(cellNib, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
+        tableView.register(DropDownCell.self, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
 
 		DispatchQueue.main.async {
 			//HACK: If not done in dispatch_async on main queue `setupUI` will have no effect
@@ -758,7 +758,7 @@ extension DropDown {
 	
 	fileprivate func fittingWidth() -> CGFloat {
 		if templateCell == nil {
-			templateCell = (cellNib.instantiate(withOwner: nil, options: nil)[0] as! DropDownCell)
+			templateCell = DropDownCell()
 		}
 		
 		var maxWidth: CGFloat = 0
