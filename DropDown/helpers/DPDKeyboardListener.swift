@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Kevin Hirsch. All rights reserved.
 //
 
-#if os(iOS)
-
 import UIKit
 
 internal final class KeyboardListener {
@@ -68,5 +66,3 @@ extension KeyboardListener {
 	}
 	
 }
-
-#endif
