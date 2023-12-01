@@ -9,7 +9,6 @@
 import UIKit
 
 extension DropDown {
-
 	public class func setupDefaultAppearance() {
 		let appearance = DropDown.appearance()
 
@@ -27,5 +26,4 @@ extension DropDown {
         appearance.selectedTextColor = DPDConstant.UI.SelectedTextColor
 		appearance.textFont = DPDConstant.UI.TextFont
 	}
-
 }

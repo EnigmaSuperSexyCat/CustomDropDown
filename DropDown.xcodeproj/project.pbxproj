@@ -24,6 +24,7 @@
 		0AB5D89A1D0EF15D002D3A17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5D8971D0EF15D002D3A17 /* ViewController.swift */; };
 		0AB5D8A11D0EF173002D3A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5D89F1D0EF173002D3A17 /* Main.storyboard */; };
 		0AC1C33A1B6B884100A8DC0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC1C3391B6B884100A8DC0D /* Images.xcassets */; };
+		2C7A4A892B19C546005F0A6B /* SelfResizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A4A882B19C546005F0A6B /* SelfResizingTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		0AB5D8971D0EF15D002D3A17 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0AB5D8A01D0EF173002D3A17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AC1C3391B6B884100A8DC0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Demo/Images.xcassets; sourceTree = "<group>"; };
+		2C7A4A882B19C546005F0A6B /* SelfResizingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfResizingTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		0AB5D8831D0EEEFF002D3A17 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2C7A4A882B19C546005F0A6B /* SelfResizingTableView.swift */,
 				0AB5D8841D0EEEFF002D3A17 /* DropDown+Appearance.swift */,
 				0AB5D8851D0EEEFF002D3A17 /* DropDown.swift */,
 				0AB5D8861D0EEEFF002D3A17 /* DropDownCell.swift */,
@@ -368,6 +371,7 @@
 				0AB5D88A1D0EEEFF002D3A17 /* DPDUIView+Extension.swift in Sources */,
 				0AB5D8881D0EEEFF002D3A17 /* DPDConstants.swift in Sources */,
 				0AB5D88E1D0EEEFF002D3A17 /* DropDownCell.swift in Sources */,
+				2C7A4A892B19C546005F0A6B /* SelfResizingTableView.swift in Sources */,
 				0AB5D8891D0EEEFF002D3A17 /* DPDKeyboardListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
