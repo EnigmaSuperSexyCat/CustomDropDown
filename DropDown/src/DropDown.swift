@@ -238,6 +238,18 @@ public final class DropDown: UIView {
 		tableView.layer.cornerRadius = radius
 		reloadAllComponents()
 	}
+    
+    @objc public dynamic func setupBorderWidth(_ width: CGFloat) {
+        tableViewContainer.layer.borderWidth = width
+        tableView.layer.borderWidth = width
+        reloadAllComponents()
+    }
+    
+    @objc public dynamic func setupBorderColor(_ color: UIColor) {
+        tableViewContainer.layer.borderColor = color.cgColor
+        tableView.layer.borderColor = color.cgColor
+        reloadAllComponents()
+    }
 
 	/**
 	The masked corners of DropDown.
@@ -358,14 +370,14 @@ public final class DropDown: UIView {
      The NIB to use for DropDownCells
      
      Changing the cell nib automatically reloads the drop down.
-//     */
-//	public var cellNib = UINib(nibName: "DropDownCell", bundle: Bundle(for: DropDownCell.self)) {
-//		didSet {
-//			tableView.register(cellNib, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
+     */
+    public var cellNib : UINib? {
+		didSet {
+			tableView.register(cellNib, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
 //			templateCell = nil
-//			reloadAllComponents()
-//		}
-//	}
+			reloadAllComponents()
+		}
+	}
 //
 	//MARK: Content
 
