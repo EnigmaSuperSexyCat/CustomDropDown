@@ -238,6 +238,18 @@ public final class DropDown: UIView {
 		tableView.layer.cornerRadius = radius
 		reloadAllComponents()
 	}
+    
+    @objc public dynamic func setupBorderWidth(_ width: CGFloat) {
+        tableViewContainer.layer.borderWidth = width
+        tableView.layer.borderWidth = width
+        reloadAllComponents()
+    }
+    
+    @objc public dynamic func setupBorderColor(_ color: UIColor) {
+        tableViewContainer.layer.borderColor = color.cgColor
+        tableView.layer.borderColor = color.cgColor
+        reloadAllComponents()
+    }
 
 	/**
 	The masked corners of DropDown.
